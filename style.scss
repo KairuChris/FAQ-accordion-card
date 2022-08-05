@@ -1,0 +1,195 @@
+@forward 'globals';
+@import 'globals/colors';
+
+body{
+    background-image: linear-gradient($Softviolet,$Softblue);
+    color: $Verydarkdesaturatedblue;
+
+    .attribution{
+        text-align: center;
+        color: $Lightgrayishblue;
+        a{
+            color: $Verydarkdesaturatedblue;
+        }
+    }
+  
+}
+.container{
+    background-color: white;
+    width: 330px;
+    margin: 150px auto;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0rem 1rem 3rem rgba(0, 0, 0, 0.3);
+
+    .illustration-container{
+        #box{
+            display: none;
+        }
+        .desktop-illustration{
+            display: none;
+        }
+    }
+
+    h1{
+        margin: 20px 0 0 0;
+        text-align: center;
+        color: $Verydarkdesaturatedblue;
+        margin-bottom: 30px;
+    }
+
+    .image{
+        #illustration{
+            margin: 0;
+            margin-top: -133px;
+            margin-left: 20px;
+            height: 180px;
+        }
+        #img-shadow{
+            margin: -75px auto 0 20px;
+            height: 103px;
+        }
+    }
+    .faq-container{
+        h1{
+            color: $Verydarkdesaturatedblue;
+        }
+        .faq{
+            &:last-child{
+                margin-bottom: 20px;
+            }
+            .question{
+                font-weight: 400;
+                border-bottom: 1px solid $Lightgrayishblue;
+                margin-top: 15px;
+                margin-bottom: 0px;
+                padding-bottom: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                color: $Darkgrayishblue;
+               
+                &:hover{
+                    color: $Softred;
+                    transition: .5s;
+                }
+            }
+            #arrow{
+                height: 100%;
+                transition: transform .3s ease;
+            }
+            .answer{
+                font-size: 12px;
+                margin: 0;
+                color: $Darkgrayishblue;
+                max-height: 0;
+                overflow: hidden;
+                font-weight: 400;
+                line-height: 20px;
+               
+                p{
+                    margin-top: 10px;
+                    width: 90%;  
+                }
+            }
+            &.active .answer{
+                max-height: 100%;
+                border-bottom: 1px solid $Lightgrayishblue;
+                margin-bottom: 10px;
+            }
+            &.active #arrow{
+                 transform: rotate(180deg);
+            }
+            &.active .question{
+                border-bottom: none;
+                padding: 0;
+                font-weight: 700;
+                color: $Verydarkdesaturatedblue;
+            }
+        }
+    }
+
+  
+    
+}
+
+@media (min-width:1020px){
+    
+    .container{
+      width: 920px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    //   background-image: url("images/bg-pattern-desktop.svg");
+    //   background-repeat: no-repeat;
+    //   background-position: 1200% 68%;
+      padding: 0;
+      .illustration-container{
+        width: 400px;
+        height: 510px;
+        position: relative;
+     
+        #box{
+            display: block;
+            position: absolute;
+            left: -23.2%;
+            top: 42.5%;
+            z-index: 2;
+        }
+        .desktop-illustration{
+            display: block;
+            width: 100%;
+            max-height: 643px;
+            overflow: hidden;
+            #woman{
+            position: relative;
+             margin-left: -80px;
+             margin-top: 80px;
+            }
+            #pattern{
+                margin-top: -183%;
+                margin-left: -145%;
+            }
+          }
+      }
+   
+      .image{
+        display: none;
+      }
+
+      .faq-container{
+        width: 350px;
+        h1{
+            text-align: left;
+            margin-top: 70px;
+            margin-bottom: 30px;
+        }
+
+        .faq{
+            .question{
+                margin: 0;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+            .answer{
+                margin: 0;
+            }
+           
+            &.active .answer{   
+                max-height: 100%;
+                border-bottom: 1px solid $Lightgrayishblue;
+                line-height: 20px;
+                margin: 0;
+            }
+            &.active .question{
+                padding-top: 10px;
+                margin-top: 10px;
+            }
+            &:last-child{
+                margin-bottom: 80px;
+            }
+        }
+       
+      }
+    }
+}

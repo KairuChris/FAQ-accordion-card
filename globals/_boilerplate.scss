@@ -1,0 +1,13 @@
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+a,a:visited{
+    text-decoration: none;
+}
